@@ -7,6 +7,7 @@ import { FaCartShopping } from "react-icons/fa6";
 // this is for caret icon
 import { FaCaretDown } from "react-icons/fa";
 
+
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -30,7 +31,7 @@ const Navbar = () => {
     {
       id: 1,
       name: "Home",
-      link: "/#",
+      link: "/",
     },
     {
       id: 2,
