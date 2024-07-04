@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import logo from "../../assets/logo.png";
-// this is for search icon
 import { IoMdSearch } from "react-icons/io";
-// this is for cart icon
 import { FaCartShopping } from "react-icons/fa6";
-// this is for caret icon
 import { FaCaretDown } from "react-icons/fa";
-// this is for profile icon
 import { CgProfile } from "react-icons/cg";
-
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check for saved user preference
     const savedMode = localStorage.getItem('theme') === 'dark';
     setDarkMode(savedMode);
     document.documentElement.classList.toggle('dark', savedMode);
@@ -30,49 +24,23 @@ const Navbar = () => {
   };
 
   const Menu = [
-    {
-      id: 1,
-      name: "Home",
-      link: "/",
-    },
-    {
-      id: 2,
-      name: "Top Rated",
-      link: "/#services",
-    },
-    {
-      id: 3,
-      name: "Kids Wear",
-      link: "/#",
-    },
-    {
-      id: 4,
-      name: "Mens Wear",
-      link: "/#",
-    },
-    {
-      id: 5,
-      name: "Electronics",
-      link: "/#",
-    },
+    { id: 1, name: "Home", link: "/" },
+    { id: 2, name: "Top Rated", link: "/#services" },
+    { id: 3, name: "Kids Wear", link: "/#" },
+    { id: 4, name: "Mens Wear", link: "/#" },
+    { id: 5, name: "Electronics", link: "/#" },
   ];
 
   const DropdownLinks = [
-    {
-      id: 1,
-      name: "Trending",
-      link: "/#",
-    },
-    {
-      id: 2,
-      name: "Best Selling",
-      link: "/#",
-    },
-    {
-      id: 3,
-      name: "Top Rated",
-      link: "/#",
-    },
+    { id: 1, name: "Trending", link: "/#" },
+    { id: 2, name: "Best Selling", link: "/#" },
+    { id: 3, name: "Top Rated", link: "/#" },
+  ];
+
+  const Login = [
+    { id: 1, name: "Sign in", link: "/#" },
+    { id: 2, name: "Profile", link: "/#" },
+    { id: 3, name: "Wishlist", link: "/#" },
   ];
 
   return (
@@ -81,121 +49,94 @@ const Navbar = () => {
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#"
-              className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src={logo} alt="logo"
-                className="w-10 uppercase" />
+            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
+              <img src={logo} alt="logo" className="w-10 uppercase" />
               STORE
             </a>
           </div>
           <div className="flex justify-between items-center gap-4">
-            {/* {"search bar placed here "} */}
+            {/* Search bar */}
             <div className="relative group hidden sm:block">
               <input
                 type="text"
                 placeholder="search"
-                className="w-[200px] sm:w-[400px] 
-                         
-                        transition-all duration-300 rounded-full border border-gray-300
-                        px-2 py-1
-                        focus:outline-none focus:border-1
-                        focus:border-primary"
+                className="w-[200px] sm:w-[400px] transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-primary"
               />
-              <IoMdSearch
-                className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3"
-              />
+              <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
-            {/* order button placed here */}
-            {/* ordering functionality will be added later */}
-            {/* <button
-              onClick={() => alert("ordering not available yet")}
-              className="bg-gradient-to-r from-primary to-secondary
-            transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group">
-              <span
-                className="group-hover:block hidden transition-all duration-200"
-              >Order</span>
-              <FaCartShopping
-                className="text-xl text-white drop-shadow-sm cursor-pointer"
-              />
-            </button> */}
-            {/* <CgProfile/>
-            <p className='text-gray-900 cursor-pointer dark:text-white '>Login</p> */
-            <div 
-                    // data-aos="fade-up"
-                    className='flex items-center gap-2 pr-5' >
-                        <CgProfile 
-                            className='text-gray-900 cursor-pointer dark:text-white'
-                        />
-                        <p>Log in</p>
-                    </div>}
+            {/* Profile dropdown */}
+            <div className='relative group flex items-center gap-1 pr-5'>
+              <CgProfile className='text-gray-900 cursor-pointer dark:text-white' />
+              
+              <a href='#'
+              // className='font-semibold cursor-pointer hover:text-primary'
+              className="flex items-center gap-[2px] py-2 font-semibold"
+              >Log in</a>
+              <span>
+                <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
+              </span>
+              <div className="absolute right-0 hidden group-hover:block w-[150px] pt-15 mt-12 rounded-md bg-white dark:bg-gray-700 p-2 text-black dark:text-white shadow-md mt-12" style={{ zIndex: 5 }}>
+                <ul>
+                  {Login.map((data) => (
+                    <li key={data.id}>
+                      <a href={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
+                        {data.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             
-            {/* darkmode switch */}
+            {/* Dark mode switch */}
             <div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
                   type="checkbox"
-                  // checked={darkMode}
+                  checked={darkMode}
                   onChange={toggleDarkMode}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none 
-                peer-focus:ring-4 peer-focus:ring-primary dark:peer-focus:ring-secondary rounded-full peer 
-                dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white 
-                after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
-                after:bg-white after:border-gray-300 after:border after:rounded-full 
-                after:h-5 after:w-5 after:transition-all dark:border-gray-600 
-                peer-checked:bg-primary peer-checked:dark:bg-secondary"></div>
-                {/* <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle Theme</span> */}
+                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary dark:peer-focus:ring-secondary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary peer-checked:dark:bg-secondary"></div>
               </label>
             </div>
           </div>
         </div>
       </div>
-      {/* LowerNavbar */}
+      {/* Lower Navbar */}
       <div className="flex justify-center">
-        {/* Add content for the lower navbar here */}
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
-              <a href={data.link}
-              className="inlilne-block px-4 hover:text-primary duration-200"
-              >
-              {data.name}</a>
+              <a href={data.link} className="inline-block px-4 hover:text-primary duration-200">
+                {data.name}
+              </a>
             </li>
           ))}
-          {/* dropdown */}
+          {/* Dropdown */}
           <li className="group relative cursor-pointer">
-          <a
-          href="#"
-          className="flex items-center gap-[2px] py-2"
-          >
-          Trending Products
-          <span>
-            <FaCaretDown
-              className="transition-all duration-200
-              group-hover:rotate-180"
-            />
-          </span>
-          </a>
-          <div className="absolute z-[9999] hidden group-hover:block w-[150px] rounded-md bg-white
-          p-2 text-black shadow-md">
-            <ul>
-              {DropdownLinks.map((data) => (
-                <li key={data.id}>
-                  <a
-                  href= {data.link}
-                  className="inline-block w-full rounded-md p-2
-                  hover:bg-primary/20"
-                  >{data.name}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <a href="#" className="flex items-center gap-[2px] py-2">
+              Trending Products
+              <span>
+                <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
+              </span>
+            </a>
+            <div className="absolute z-[9999] hidden group-hover:block w-[150px] rounded-md bg-white dark:bg-gray-700 p-2 text-black dark:text-white shadow-md">
+              <ul>
+                {DropdownLinks.map((data) => (
+                  <li key={data.id}>
+                    <a href={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
+                      {data.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default Navbar;
