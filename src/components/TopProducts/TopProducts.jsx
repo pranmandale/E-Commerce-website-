@@ -61,7 +61,7 @@ const TopProducts = () => {
                     <div
 
                     // animations added
-                    data-aos="zoom-in"
+                    // data-aos="zoom-in"
                     className='rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary
                     hover:text-white relative shadow-xl duration-300 group max-w-[300px]'
                     >

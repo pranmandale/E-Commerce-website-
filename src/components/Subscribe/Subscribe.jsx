@@ -13,8 +13,8 @@ const BannerImg = {
 const Subscribe = () => {
   return (
     <div 
-    data-aos="zoom-in"
-    className='mb-0 bg-gray-100 dark:bg-gray-800 text-white '
+    // data-aos="zoom-in"
+    className='mb-0 bg-gray-100 dark:bg-gray-900 text-white '
     // style={BannerImg}
     >
       <div className='container backdrop-blur-sm py-10 pt-10'>
@@ -22,12 +22,27 @@ const Subscribe = () => {
             <h1 className='text-2xl text-gray-900 !text-center sm:text-left sm:text-4xl font-semibold dark:text-white'>
                 Get Notified about new products
             </h1>
-            <input
-                data-aos="fade-up"
+            {/* <input
+                // data-aos="fade-up"
                 type='text'
                 placeholder='enter your email'
                 className='w-full p-3 rounded-full'
-            />
+            /> */}
+            <div className='text-center'>
+                <button
+                      onClick={() => alert("ordering not available yet")}
+                      className= "bg-gradient-to-r from-primary to-secondary hover:scale-10 duration-200 
+                      text-white py-2 px-4 rounded-full"
+                    >
+                      Sign in
+                </button>
+                <p 
+                className='text-gray-900 cursor-pointer dark:text-white pt-3' 
+                onClick={() => alert("ordering not available yet")}
+                >
+                Already have an account?
+                </p>
+            </div>  
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 // this is for caret icon
 import { FaCaretDown } from "react-icons/fa";
+// this is for profile icon
+import { CgProfile } from "react-icons/cg";
 
 
 const Navbar = () => {
@@ -92,8 +94,8 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="search"
-                className="w-[200px] sm:w-[200px] 
-                        group-hover:w-[300px] 
+                className="w-[200px] sm:w-[400px] 
+                         
                         transition-all duration-300 rounded-full border border-gray-300
                         px-2 py-1
                         focus:outline-none focus:border-1
@@ -105,7 +107,7 @@ const Navbar = () => {
             </div>
             {/* order button placed here */}
             {/* ordering functionality will be added later */}
-            <button
+            {/* <button
               onClick={() => alert("ordering not available yet")}
               className="bg-gradient-to-r from-primary to-secondary
             transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group">
@@ -115,17 +117,34 @@ const Navbar = () => {
               <FaCartShopping
                 className="text-xl text-white drop-shadow-sm cursor-pointer"
               />
-            </button>
+            </button> */}
+            {/* <CgProfile/>
+            <p className='text-gray-900 cursor-pointer dark:text-white '>Login</p> */
+            <div 
+                    // data-aos="fade-up"
+                    className='flex items-center gap-2 pr-5' >
+                        <CgProfile 
+                            className='text-gray-900 cursor-pointer dark:text-white'
+                        />
+                        <p>Log in</p>
+                    </div>}
+            
             {/* darkmode switch */}
             <div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
                   type="checkbox"
-                  checked={darkMode}
+                  // checked={darkMode}
                   onChange={toggleDarkMode}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary dark:peer-focus:ring-secondary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary peer-checked:dark:bg-secondary"></div>
+                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none 
+                peer-focus:ring-4 peer-focus:ring-primary dark:peer-focus:ring-secondary rounded-full peer 
+                dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white 
+                after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
+                after:bg-white after:border-gray-300 after:border after:rounded-full 
+                after:h-5 after:w-5 after:transition-all dark:border-gray-600 
+                peer-checked:bg-primary peer-checked:dark:bg-secondary"></div>
                 {/* <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle Theme</span> */}
               </label>
             </div>
