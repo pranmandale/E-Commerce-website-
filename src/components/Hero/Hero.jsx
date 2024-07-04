@@ -43,7 +43,8 @@ const Hero = () => {
   }
   return (
     
-    <div className='relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-gray-950 
+    <div className='relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gray-100 
+    flex justify-center items-center dark:bg-gray-900 
     dark:text-white duration-200'>
   {/* Background pattern */}
   <div className='h-[700px] w-[800px] bg-primary/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z-9'></div>
@@ -59,10 +60,29 @@ const Hero = () => {
         {/* Text content section */}
         <div className='flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left 
         order-2 sm:order-1 relative z-10'>
-          <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold'>{data.title}</h1>
-          <p className='text-sm'>{data.descritption}</p>
+        {/* data aos included i.e animations inclulded */}
+          <h1 
+          data-aos="zoom-out"
+          data-aos-duration="500"
+          data-aos-once="true"
+          className='text-5xl sm:text-6xl lg:text-7xl font-bold'
+          >
+          {data.title}
+          </h1>
+          <p 
+          data-aos="fade--up"
+          data-aos-duration="500"
+          data-aos-delay="100"
+          className='text-sm'
+          >
+          {data.descritption}
+          </p>
 
-          <div>
+          <div
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="300"
+          >
             <button
             className='bg-gradient-to-r from-primary to-secondary hover:scale-10 duration-200 
             text-white py-2 px-4 rounded-full'
