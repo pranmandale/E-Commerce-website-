@@ -47,7 +47,7 @@ const Navbar = () => {
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* Upper Navbar */}
       <div className="bg-primary/40 py-2">
-        <div className="container flex justify-between items-center">
+        <div className="container flex justify-between items-center ">
           <div>
             <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
               <img src={logo} alt="logo" className="w-10 uppercase" />
@@ -65,17 +65,23 @@ const Navbar = () => {
               <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
             {/* Profile dropdown */}
-            <div className='relative group flex items-center gap-1 pr-5'>
+            <div className='relative group flex items-center gap-1 pr-2 '>
               <CgProfile className='text-gray-900 cursor-pointer dark:text-white' />
               
               <a href='#'
               // className='font-semibold cursor-pointer hover:text-primary'
-              className="flex items-center gap-[2px] py-2 font-semibold"
+              className="group relative items-center  py-2 font-semibold curson-pointer hover:text-primary "
               >Log in</a>
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
-              <div className="absolute right-0 hidden group-hover:block w-[150px] pt-15 mt-12 rounded-md bg-white dark:bg-gray-700 p-2 text-black dark:text-white shadow-md mt-12" style={{ zIndex: 5 }}>
+              <div className='pt-6 text-center '>
+              <div 
+              className=" absolute  hidden z-[9999] right-1    
+              group-hover:block w-[130px]  
+              rounded-md bg-white dark:bg-gray-700 p-2 
+              text-black dark:text-white shadow-md " 
+              >
                 <ul>
                   {Login.map((data) => (
                     <li key={data.id}>
@@ -85,6 +91,7 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
               </div>
             </div>
             
@@ -97,7 +104,19 @@ const Navbar = () => {
                   onChange={toggleDarkMode}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary dark:peer-focus:ring-secondary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary peer-checked:dark:bg-secondary"></div>
+                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none 
+                peer-focus:ring-4 peer-focus:ring-primary 
+                dark:peer-focus:ring-secondary rounded-full peer 
+                dark:bg-gray-700 peer-checked:after:translate-x-full 
+                peer-checked:after:border-white after:content-[''] 
+                after:absolute after:top-[2px] 
+                after:left-[2px] after:bg-white 
+                after:border-gray-300 after:border 
+                after:rounded-full after:h-5 
+                after:w-5 after:transition-all 
+                dark:border-gray-600 
+                peer-checked:bg-primary 
+                peer-checked:dark:bg-secondary"></div>
               </label>
             </div>
           </div>
@@ -121,7 +140,9 @@ const Navbar = () => {
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[150px] rounded-md bg-white dark:bg-gray-700 p-2 text-black dark:text-white shadow-md">
+            <div className="absolute hidden z-[9999]  group-hover:block w-[150px] 
+            rounded-md bg-white dark:bg-gray-700 
+            p-2 text-black dark:text-white shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
