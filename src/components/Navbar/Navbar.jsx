@@ -4,9 +4,11 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import Login from "../Login/Login.jsx";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
     const savedMode = localStorage.getItem('theme') === 'dark';
@@ -27,8 +29,8 @@ const Navbar = () => {
     { id: 1, name: "Home", link: "/" },
     { id: 2, name: "Top Rated", link: "/#services" },
     { id: 3, name: "Kids Wear", link: "/#" },
-    { id: 4, name: "Mens Wear", link: "/#" },
-    { id: 5, name: "Electronics", link: "/#" },
+    { id: 4, name: "Mens Wear", link: "/mens-wear" },
+    { id: 5, name: "Electronics", link: "/electronics" },
   ];
 
   const DropdownLinks = [
@@ -37,7 +39,7 @@ const Navbar = () => {
     { id: 3, name: "Top Rated", link: "/#" },
   ];
 
-  const Login = [
+  const LoginLinks = [
     { id: 1, name: "Sign in", link: "/#" },
     { id: 2, name: "Profile", link: "/#" },
     { id: 3, name: "Wishlist", link: "/#" },
@@ -47,7 +49,7 @@ const Navbar = () => {
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* Upper Navbar */}
       <div className="bg-primary/40 py-2">
-        <div className="container flex justify-between items-center ">
+        <div className="container flex justify-between items-center">
           <div>
             <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
               <img src={logo} alt="logo" className="w-10 uppercase" />
@@ -67,34 +69,32 @@ const Navbar = () => {
             {/* Profile dropdown */}
             <div className='relative group flex items-center gap-1 pr-2 '>
               <CgProfile className='text-gray-900 cursor-pointer dark:text-white' />
-              
-              <a href='#'
-              // className='font-semibold cursor-pointer hover:text-primary'
-              className="group relative items-center  py-2 font-semibold curson-pointer hover:text-primary "
-              >Log in</a>
+              <a
+                href="#"
+                onClick={() => setShowLogin(true)}
+                className="group relative items-center py-2 font-semibold cursor-pointer hover:text-primary"
+              >
+                Log in
+              </a>
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
               <div className='pt-6 text-center '>
-              <div 
-              className=" absolute  hidden z-[9999] right-1    
-              group-hover:block w-[130px]  
-              rounded-md bg-white dark:bg-gray-700 p-2 
-              text-black dark:text-white shadow-md " 
-              >
-                <ul>
-                  {Login.map((data) => (
-                    <li key={data.id}>
-                      <a href={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
-                        {data.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div 
+                  className="absolute hidden z-[9999] right-1 group-hover:block w-[130px] rounded-md bg-white dark:bg-gray-700 p-2 text-black dark:text-white shadow-md" 
+                >
+                  <ul>
+                    {LoginLinks.map((data) => (
+                      <li key={data.id}>
+                        <a href={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
+                          {data.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-            
             {/* Dark mode switch */}
             <div>
               <label className="relative inline-flex items-center cursor-pointer">
@@ -140,7 +140,7 @@ const Navbar = () => {
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute hidden z-[9999]  group-hover:block w-[150px] 
+            <div className="absolute hidden z-[9999] group-hover:block w-[150px] 
             rounded-md bg-white dark:bg-gray-700 
             p-2 text-black dark:text-white shadow-md">
               <ul>
@@ -156,6 +156,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      {showLogin && <Login />}
     </div>
   );
 }

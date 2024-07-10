@@ -220,11 +220,11 @@ const Products = () => {
       <div className='container'>
         {/* Header section */}
         <div className='text-center mb-10 max-w-[600px] mx-auto'>
-          <p className='text-3xl text-sm text-primary dark:text-secondary'>Top Selling Products for you</p>
-          <h1 className='text-3xl font-bold dark:text-white'>Products</h1>
-          <p className='text-xs text-gray-400 dark:text-gray-500'>
+          <p className='text-3xl font-semibold text-sm text-primary dark:text-secondary'>Top Selling Products for you</p>
+          <h1 className='text-5xl font-bold dark:text-white'>Products</h1>
+          {/* <p className='text-xs text-gray-400 dark:text-gray-500'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere velit tenetur expedita.
-          </p>
+          </p> */}
         </div>
 
         {/* Body section */}
