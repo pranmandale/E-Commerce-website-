@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../../assets/logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
@@ -51,10 +52,10 @@ const Navbar = () => {
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
+            <Link to="/" className="font-bold text-2xl sm:text-3xl flex gap-2 items-center">
               <img src={logo} alt="logo" className="w-10 uppercase" />
               STORE
-            </a>
+            </Link>
           </div>
           <div className="flex justify-between items-center gap-4">
             {/* Search bar */}
@@ -69,13 +70,12 @@ const Navbar = () => {
             {/* Profile dropdown */}
             <div className='relative group flex items-center gap-1 pr-2 '>
               <CgProfile className='text-gray-900 cursor-pointer dark:text-white' />
-              <a
-                href="#"
+              <span
                 onClick={() => setShowLogin(true)}
                 className="group relative items-center py-2 font-semibold cursor-pointer hover:text-primary"
               >
                 Log in
-              </a>
+              </span>
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
@@ -86,9 +86,9 @@ const Navbar = () => {
                   <ul>
                     {LoginLinks.map((data) => (
                       <li key={data.id}>
-                        <a href={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
+                        <Link to={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
                           {data.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -127,28 +127,26 @@ const Navbar = () => {
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
-              <a href={data.link} className="inline-block px-4 hover:text-primary duration-200">
+              <Link to={data.link} className="inline-block px-4 hover:text-primary duration-200">
                 {data.name}
-              </a>
+              </Link>
             </li>
           ))}
           {/* Dropdown */}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2">
+            <span className="flex items-center gap-[2px] py-2">
               Trending Products
-              <span>
-                <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
-              </span>
-            </a>
+              <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
+            </span>
             <div className="absolute hidden z-[9999] group-hover:block w-[150px] 
-            rounded-md bg-white dark:bg-gray-700 
-            p-2 text-black dark:text-white shadow-md">
+              rounded-md bg-white dark:bg-gray-700 
+              p-2 text-black dark:text-white shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
-                    <a href={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
+                    <Link to={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
                       {data.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

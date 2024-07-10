@@ -9,7 +9,7 @@ import Banner from './components/Banner/Banner'
 import Subscribe from './components/Subscribe/Subscribe'
 import Footer from './components/Footer/Footer'
 
-const App = () => {
+const Home = () => {
   React.useInsertionEffect(() => {
   AOS.init({
     offset: 100,
@@ -32,4 +32,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Home
