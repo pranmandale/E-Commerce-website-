@@ -226,7 +226,7 @@ const Products = () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere velit tenetur expedita.
           </p> */}
         </div>
-
+              
         {/* Body section */}
         <div>
           <h1 className='pb-5 text-2xl font-bold'>Best Deals on Fashions</h1>
@@ -239,7 +239,7 @@ const Products = () => {
                   <p className='text-sm text-gray-600 dark:text-gray-400'>{data.color}</p>
                   <div className='flex items-center gap-1'>
                     {/* <FaStar className='text-yellow-500' /> */}
-                    <span>{data.rating}</span>
+                    {/* <span>{data.rating}</span> */}
                   </div>
                 </div>
               </div>
