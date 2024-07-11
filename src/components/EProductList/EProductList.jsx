@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import Products from '../../data/Products'; // Assuming this import is correct
+import React, { useState } from "react";
+import EProducts from "../../e products/EProducts";
+
 
 const ProductList = ({ category }) => {
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
 
   const priceRanges = [
-    { label: 'Below ₹1000', min: 0, max: 999 },
-    { label: '₹1000 - ₹1500', min: 1000, max: 1500 },
-    { label: 'Above ₹15,000', min: 1501, max: Number.POSITIVE_INFINITY }
+    { label: 'Below ₹10,000', min: 0, max: 9999 },
+    { label: '₹10,000 - ₹15,000', min: 10000, max: 15000 },
+    { label: 'Above ₹15,000', min: 15001, max: Infinity }
   ];
 
   const handleRadioChange = (e) => {
@@ -16,8 +17,8 @@ const ProductList = ({ category }) => {
     setSelectedPriceRange({ min, max });
   };
 
-  const filteredProducts = Products.filter(product => {
-    const productPrice = parseFloat(product.color.replace(/[^\d.]/g, '')); // Update this to product.price or adjust as per your data
+  const filteredProducts = EProducts.filter(product => {
+    const productPrice = parseFloat(product.color.replace(/[^\d.]/g, ''));
     const isCategoryMatch = product.category === category;
     const isPriceMatch = !selectedPriceRange || (productPrice >= selectedPriceRange.min && productPrice <= selectedPriceRange.max);
     return isCategoryMatch && isPriceMatch;
@@ -50,7 +51,7 @@ const ProductList = ({ category }) => {
             <div key={product.id} className="mb-4">
               <div 
                 className="flex bg-white dark:bg-gray-800 p-4 w-full rounded-lg py-10 cursor-pointer shadow-md"
-                onClick={() => alert(`Welcome to ${product.title} page`)} >
+                onClick={() => alert("Welcome to our website")} >
                 <img src={product.img} alt={product.title} className="w-52 h-63 object-cover rounded-lg mr-8" />
                 <div className="flex flex-col justify-between">
                   <div className='ml-6'>

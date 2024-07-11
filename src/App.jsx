@@ -4,6 +4,8 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './Home';
 import Footer from './components/Footer/Footer';
 import ProductList from './components/ProductList/ProductList';
+import EProductList from './components/EProductList/EProductList'
+import KProductList from './components/kProductList/KProductList';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -26,8 +28,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/kids-wear" element={<KProductList category="electronics" />} />
           <Route path="/mens-wear" element={<ProductList category="mobile" />} />
-          <Route path="/electronics" element={<ProductList category="electronics" />} />
+          <Route path="/electronics" element={<EProductList category="electronics" />} />
           {/* <Route path="/mobile" element={<ProductList category="mobile" />} /> */}
           {/* Add more routes as needed */}
         </Routes>

@@ -15,75 +15,76 @@ const Products = [
   {
     id: 1,
     img: Img10,
-    title: "Blue Poco X3",
-    color: "From ₹99999",
+    title: "Summer Korea Style Handsome Fashion Mens Shirts",
+    color: "From ₹799",
     aosDelay: "800",
     category: "mobile", // Added category
   },
   {
     id: 2,
     img: Img11,
-    title: "Black Poco X3",
-    color: "From ₹10999",
+    title: "Leriya Fashion Shirts for Men || Rayon Block Print & Preppy Short Sleeves Shirt ",
+    color: "From ₹875",
     aosDelay: "800",
     category: "mobile", // Added category
   },
   {
     id: 3,
     img: Img7,
-    title: "Fhd Glow Y21 vivo",
-    color: "From ₹13999",
+    title: "Korean Style Joint Contrast Fashion Casual Shirts for Men",
+    color: "From ₹1567",
     aosDelay: "800",
     category: "mobile", // Added category
   },
   {
     id: 4,
     img: Img8,
-    title: "vivo X100",
-    color: "From ₹14999",
+    title: "Buy Blue Fer Fashion Men Green Solid Cotton Blend Casual Shirt (Xxl",
+    color: "From ₹1500",
     aosDelay: "800",
     category: "mobile", // Added category
-  },
-  {
-    id: 5,
-    img: Img9,
-    title: "vovo T3 series",
-    color: "From ₹18999",
-    aosDelay: "800",
-    category: "electronics", // Added category
   },
   {
     id: 5,
     img: Img12,
-    title: "vovo T3 series",
-    color: "From ₹18999",
+    title: "branded shoes for men",
+    color: "From ₹699",
     aosDelay: "800",
     category: "mobile", // Added category
   },
   {
-    id: 5,
+    id: 6,
     img: Img13,
-    title: "vovo T3 series",
-    color: "From ₹18999",
+    title: "Buy Dexture Air Jordan Style trendy Sneakers For Men",
+    color: "From ₹999",
     aosDelay: "800",
     category: "mobile", // Added category
   },
   {
-    id: 5,
+    id: 7,
     img: Img14,
-    title: "vovo T3 series",
-    color: "From ₹18999",
+    title: "Produkt By Jack & Jones Acid Heavily Washed Slim Fit Jeans For Men ",
+    color: "From ₹1786",
     aosDelay: "800",
     category: "mobile", // Added category
   },
   {
-    id: 5,
+    id: 8,
     img: Img15,
-    title: "vovo T3 series",
-    color: "From ₹18999",
+    title: "Decible Polyster Blend Formal Trousers For Man |formal pants blue | pant trousers for men",
+    color: "From ₹1298",
     aosDelay: "800",
     category: "mobile", // Added category
   },
+  // {
+  //   id: 5,
+  //   img: Img9,
+  //   title: "vivo T3 series",
+  //   color: "From ₹16999",
+  //   aosDelay: "800",
+  //   category: "electronics", // Added category
+  // },
+ 
   // Add more products with their respective categories if needed
 ];
 
