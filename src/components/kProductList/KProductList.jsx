@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-
-import Kwear from "../../k wear/Kwear";
-
-
-// import React, { useState } from "react";
-// import Kwear from "../../path/to/Kwear"; // Adjust the path accordingly
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import Kwear from '../../data/Products'; 
 
 const KProductList = ({ category }) => {
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
+  const navigate = useNavigate(); // Initialize navigate function
 
   const priceRanges = [
-    { label: 'Below ₹10,000', min: 0, max: 9999 },
-    { label: '₹10,000 - ₹15,000', min: 10000, max: 15000 },
-    { label: 'Above ₹15,000', min: 15001, max: Infinity }
+    { label: 'Below ₹1000', min: 0, max: 999 },
+    { label: '₹1000 - ₹1500', min: 1000, max: 1500 },
+    { label: 'Above ₹1500', min: 1501, max: Infinity }
   ];
 
   const handleRadioChange = (e) => {
@@ -55,7 +52,8 @@ const KProductList = ({ category }) => {
             <div key={product.id} className="mb-4">
               <div 
                 className="flex bg-white dark:bg-gray-800 p-4 w-full rounded-lg py-10 cursor-pointer shadow-md"
-                onClick={() => alert("Welcome to our website")} >
+                onClick={() => navigate(`/product/${product.id}`)} // Navigate to product detail page
+              >
                 <img src={product.img} alt={product.title} className="w-52 h-63 object-cover rounded-lg mr-8" />
                 <div className="flex flex-col justify-between">
                   <div className='ml-6'>

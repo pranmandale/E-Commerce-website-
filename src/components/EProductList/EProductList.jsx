@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import EProducts from "../../e products/EProducts";
-
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import EProducts from '../../data/Products'; 
 
 const ProductList = ({ category }) => {
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
+  const navigate = useNavigate(); // Initialize navigate function
 
   const priceRanges = [
     { label: 'Below ₹10,000', min: 0, max: 9999 },
@@ -51,7 +52,8 @@ const ProductList = ({ category }) => {
             <div key={product.id} className="mb-4">
               <div 
                 className="flex bg-white dark:bg-gray-800 p-4 w-full rounded-lg py-10 cursor-pointer shadow-md"
-                onClick={() => alert("Welcome to our website")} >
+                onClick={() => navigate(`/product/${product.id}`)} // Navigate to product detail page
+              >
                 <img src={product.img} alt={product.title} className="w-52 h-63 object-cover rounded-lg mr-8" />
                 <div className="flex flex-col justify-between">
                   <div className='ml-6'>

@@ -1,8 +1,11 @@
+// src/components/ProductList/ProductList.jsx
 import React, { useState } from 'react';
-import Products from '../../data/Products'; // Assuming this import is correct
+import { useNavigate } from 'react-router-dom';
+import Products from '../../data/Products'; // Adjust the path to your product data
 
 const ProductList = ({ category }) => {
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
+  const navigate = useNavigate();
 
   const priceRanges = [
     { label: 'Below ₹1000', min: 0, max: 999 },
@@ -50,7 +53,7 @@ const ProductList = ({ category }) => {
             <div key={product.id} className="mb-4">
               <div 
                 className="flex bg-white dark:bg-gray-800 p-4 w-full rounded-lg py-10 cursor-pointer shadow-md"
-                onClick={() => alert(`Welcome to ${product.title} page`)} >
+                onClick={() => navigate(`/product/${product.id}`)} >
                 <img src={product.img} alt={product.title} className="w-52 h-63 object-cover rounded-lg mr-8" />
                 <div className="flex flex-col justify-between">
                   <div className='ml-6'>

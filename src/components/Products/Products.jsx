@@ -4,7 +4,7 @@ import Img2 from "../../assets/Mobile/w1.jpg";
 import Img3 from "../../assets/women/women3.jpg";
 import Img4 from "../../assets/women/women4.jpg";
 import Img5 from "../../assets/Mobile/p1.jpg"
-import Img6 from "../../assets/Mobile/p2.webp"
+import Img6 from "../../assets/Mobile/p2.jpg"
 import Img7 from "../../assets/Mobile/v1.jpg"
 import Img8 from "../../assets/Mobile/v2.png"
 import Img9 from "../../assets/Mobile/v3.webp"
@@ -80,7 +80,7 @@ const SmartPhone = [
     img: Img5,
     title: "Blue Poco X3",
     // rating: 4.5,
-    color: "From ₹99999",
+    color: "From ₹9999",
     aosDelay: "800",
   },
   {
@@ -232,7 +232,7 @@ const Products = () => {
           <h1 className='pb-5 text-2xl font-bold'>Best Deals on Fashions</h1>
           <Slider {...settings}>
             {ProductsData.map((data) => (
-              <div key={data.id} className='space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md'>
+              <div key={data.id} className=' space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md'>
                 <img src={data.img} alt='' className='h-[200px] w-[150px] object-cover' />
                 <div>
                   <h3 className='font-semibold'>{data.title}</h3>

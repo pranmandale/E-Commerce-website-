@@ -20,7 +20,7 @@ const Kwear = [
         title: "Kid's Clothing Set Baba Suit Boy Clothing Set",
         color: "From ₹1699",
         aosDelay: "800",
-        category: "electronics", // Added category
+        category: "kids", // Added category
       },
       {
         id: 2,
@@ -28,7 +28,7 @@ const Kwear = [
         title: "Kids Wear - Readymade Suits - Indo Western :: ANERI BOUTIQUE",
         color: "From ₹1890",
         aosDelay: "800",
-        category: "electronics", // Added category
+        category: "kids", // Added category
       },
       {
         id: 3,
@@ -36,7 +36,7 @@ const Kwear = [
         title: "Little Hardy Kids Ethnic Wear Kurta Pyjama and Waistcoat Set For Boys",
         color: "From ₹1700",
         aosDelay: "800",
-        category: "electronics", // Added category
+        category: "kids", // Added category
       },
       {
         id: 4,
@@ -44,7 +44,7 @@ const Kwear = [
         title: "High Quality Special Ethnic wear for Girls kids Set",
         color: "From ₹2100",
         aosDelay: "800",
-        category: "electronics", // Added category
+        category: "kids", // Added category
       },
       {
         id: 5,
@@ -52,7 +52,7 @@ const Kwear = [
         title: "Blue Party Wear Kids Dress",
         color: "From ₹1299",
         aosDelay: "800",
-        category: "electronics", // Added category
+        category: "kids", // Added category
       },
       {
         id: 6,
@@ -60,7 +60,7 @@ const Kwear = [
         title: "Cotton Yellow Kids Western Midi Dress",
         color: "From ₹785",
         aosDelay: "800",
-        category: "electronics", // Added category
+        category: "kids", // Added category
       },
       {
         id: 7,
@@ -68,7 +68,7 @@ const Kwear = [
         title: "Buy Boys Summer Outfit Kids Cotton Suit/ Toddler Boy Summer Clothes",
         color: "From ₹899",
         aosDelay: "800",
-        category: "electronics", // Added category
+        category: "kids", // Added category
       },
       // {
       //   id: 8,
