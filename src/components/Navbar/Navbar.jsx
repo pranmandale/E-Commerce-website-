@@ -5,12 +5,14 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import Login from "../Login/Login.jsx";
+import Signup from "../Signup/Signup.jsx"; // Import your Signup component
 import Fuse from 'fuse.js'; // Import Fuse.js
 import Products from '../../data/Products'; // Assuming this import is correct
 
 const Navbar = ({ onSearch }) => {
   const [darkMode, setDarkMode] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
+  const [showLogin, setShowLogin] = useState(false); // State to manage login form display
+  const [showSignup, setShowSignup] = useState(false); // State to manage signup form display
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   
@@ -65,11 +67,21 @@ const Navbar = ({ onSearch }) => {
     { id: 3, name: "Top Rated", link: "/#" },
   ];
 
-  const LoginLinks = [
-    { id: 1, name: "Sign in", link: "/#" },
+  const LoginLinks = [ // Define LoginLinks array
+    { id: 1, name: "Signup", link: "#", onClick: () => setShowSignup(true) }, // Show login form on click
     { id: 2, name: "Profile", link: "/#" },
     { id: 3, name: "Wishlist", link: "/#" },
   ];
+
+  const SignupLinks = [ // Define SignupLinks array
+    { id: 1, name: "Sign up", link: "#",  }, // Show signup form on click
+  ];
+
+  // Function to close both login and signup forms
+  const closeForms = () => {
+    setShowLogin(false);
+    setShowSignup(false);
+  };
 
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
@@ -130,7 +142,7 @@ const Navbar = ({ onSearch }) => {
                   <ul>
                     {LoginLinks.map((data) => (
                       <li key={data.id}>
-                        <Link to={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
+                        <Link to={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20" onClick={data.onClick}>
                           {data.name}
                         </Link>
                       </li>
@@ -198,9 +210,11 @@ const Navbar = ({ onSearch }) => {
           </li>
         </ul>
       </div>
-      {showLogin && <Login />}
+      {showLogin && <Login onClose={closeForms} />} {/* Render Login component conditionally */}
+      {showSignup && <Signup onClose={closeForms} />} {/* Render Signup component conditionally */}
     </div>
   );
 }
 
 export default Navbar;
+``

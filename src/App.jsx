@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
@@ -6,10 +5,10 @@ import Home from './Home';
 import Footer from './components/Footer/Footer';
 import ProductList from './components/ProductList/ProductList';
 import EProductList from './components/EProductList/EProductList';
-// import KProductList from './components/KProductList/KProductList';
 import KProductList from './components/kProductList/KProductList';
 import SearchResults from './components/SearchResults/SearchResults';
-import ProductDetail from './components/ProductDetail/ProductDetail'; // Import the ProductDetail component
+import ProductDetail from './components/ProductDetail/ProductDetail';
+import SignUp from './components/Signup/Signup'; // Import the SignUp component
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -34,7 +33,8 @@ const App = () => {
           <Route path="/mens-wear" element={<ProductList category="mobile" />} />
           <Route path="/electronics" element={<EProductList category="electronics" />} />
           <Route path="/search" element={<SearchResults />} />
-          <Route path="/product/:id" element={<ProductDetail />} /> {/* Add this route */}
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/signup" element={<SignUp />} /> {/* Add this route */}
         </Routes>
         <Footer />
       </div>
