@@ -1,3 +1,4 @@
+// Navbar.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/logo.png";
@@ -57,7 +58,8 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
   ];
 
   const LoginLinks = [
-    { id: 1, name: "Signup", link: "/#", onClick: () => onOpenAuthModal('signup') },
+   
+    // { id: 1, name: "Signup", link: "/#", onClick: () => onOpenAuthModal('login') },
     { id: 2, name: "Profile", link: "/#" },
     { id: 3, name: "Wishlist", link: "/#" },
   ];
@@ -121,7 +123,9 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                   <ul>
                     {LoginLinks.map((data) => (
                       <li key={data.id}>
-                        <Link to={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20" onClick={data.onClick}>
+                        <Link to={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20" 
+                        // onClick={data.onClick}
+                        >
                           {data.name}
                         </Link>
                       </li>
