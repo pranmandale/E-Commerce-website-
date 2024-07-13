@@ -1,7 +1,8 @@
+// Login.js
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const Login = ({ onClose }) => {
+const Login = ({ onClose, onSignupClick }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
     console.log(data);
@@ -36,17 +37,20 @@ const Login = ({ onClose }) => {
           <div className="flex justify-end">
             <button
               type="button"
-              className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
+              className="bg-gray-400 text-white px-4 py-2 rounded mr-2 hover:bg-gray-600"
               onClick={onClose}
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded"
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
             >
               Log In
             </button>
+          </div>
+          <div className="mt-4">
+            <p>Don't have an account? <span className="text-blue-500 cursor-pointer" onClick={onSignupClick}>Sign up</span></p>
           </div>
         </form>
       </div>

@@ -1,54 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import Login from "../Login/Login.jsx";
-import Signup from "../Signup/Signup.jsx"; // Import your Signup component
-import Fuse from 'fuse.js'; // Import Fuse.js
-import Products from '../../data/Products'; // Assuming this import is correct
+import Login from "../Login/Login";
+import Signup from "../Signup/Signup";
+import Fuse from 'fuse.js';
+import Products from '../../data/Products';
 
-const Navbar = ({ onSearch }) => {
+const Navbar = ({ onSearch, onOpenAuthModal }) => {
   const [darkMode, setDarkMode] = useState(false);
-  const [showLogin, setShowLogin] = useState(false); // State to manage login form display
-  const [showSignup, setShowSignup] = useState(false); // State to manage signup form display
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
-  
-  // Fuse.js configuration
+
+  // Fuse.js configuration for search
   const fuse = new Fuse(Products, {
-    keys: ['title', 'color'], // Search in 'title' and 'color' fields
+    keys: ['title', 'color'],
     includeScore: true,
-    threshold: 0.4, // Adjust threshold as per your preference
+    threshold: 0.4,
   });
 
-  useEffect(() => {
-    const savedMode = localStorage.getItem('theme') === 'dark';
-    setDarkMode(savedMode);
-    document.documentElement.classList.toggle('dark', savedMode);
-  }, []);
-
   const toggleDarkMode = () => {
-    setDarkMode(prevMode => {
-      const newMode = !prevMode;
-      localStorage.setItem('theme', newMode ? 'dark' : 'light');
-      document.documentElement.classList.toggle('dark', newMode);
-      return newMode;
-    });
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('theme', newMode ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', newMode);
   };
 
   const handleSearch = (event) => {
     const query = event.target.value;
     setSearchTerm(query);
-    onSearch(query); // Invoke the parent component's search function
+    onSearch(query);
 
     if (query.trim() === '') {
       setSuggestions([]);
       return;
     }
 
-    // Get search suggestions from Fuse.js
     const results = fuse.search(query).map(result => result.item);
     setSuggestions(results);
   };
@@ -67,21 +56,11 @@ const Navbar = ({ onSearch }) => {
     { id: 3, name: "Top Rated", link: "/#" },
   ];
 
-  const LoginLinks = [ // Define LoginLinks array
-    { id: 1, name: "Signup", link: "#", onClick: () => setShowSignup(true) }, // Show login form on click
+  const LoginLinks = [
+    { id: 1, name: "Signup", link: "/#", onClick: () => onOpenAuthModal('signup') },
     { id: 2, name: "Profile", link: "/#" },
     { id: 3, name: "Wishlist", link: "/#" },
   ];
-
-  const SignupLinks = [ // Define SignupLinks array
-    { id: 1, name: "Sign up", link: "#",  }, // Show signup form on click
-  ];
-
-  // Function to close both login and signup forms
-  const closeForms = () => {
-    setShowLogin(false);
-    setShowSignup(false);
-  };
 
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
@@ -127,7 +106,7 @@ const Navbar = ({ onSearch }) => {
             <div className='relative group flex items-center gap-1 pr-2 '>
               <CgProfile className='text-gray-900 cursor-pointer dark:text-white' />
               <span
-                onClick={() => setShowLogin(true)}
+                onClick={() => onOpenAuthModal('login')} // Open login form directly
                 className="group relative items-center py-2 font-semibold cursor-pointer hover:text-primary"
               >
                 Log in
@@ -210,11 +189,8 @@ const Navbar = ({ onSearch }) => {
           </li>
         </ul>
       </div>
-      {showLogin && <Login onClose={closeForms} />} {/* Render Login component conditionally */}
-      {showSignup && <Signup onClose={closeForms} />} {/* Render Signup component conditionally */}
     </div>
   );
-}
+};
 
 export default Navbar;
-``
