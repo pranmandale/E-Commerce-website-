@@ -60,8 +60,8 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
   const LoginLinks = [
    
     // { id: 1, name: "Signup", link: "/#", onClick: () => onOpenAuthModal('login') },
-    { id: 2, name: "Profile", link: "/#" },
-    { id: 3, name: "Wishlist", link: "/#" },
+    // { id: 2, name: "Profile", link: "/#" },
+    { id: 3, name: "My Cart", link: "/#" },
   ];
 
   return (

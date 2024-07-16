@@ -272,6 +272,61 @@ const Products = [
     aosDelay: "800",
     category: "kids", // Added category
   },
+
+
+
+  // productsdata
+
+  // {
+  //   id: 1,
+  //   img: Img1,
+  //   title: "Women Ethnic",
+  //   // rating: 5.0,
+  //   color: "From ₹399",
+  //   aosDelay: "0",
+  // },
+  // {
+  //   id: 2,
+  //   img: Img2,
+  //   title: "Women Western",
+  //   // rating: 4.5,
+  //   color: "From ₹249",
+  //   aosDelay: "200",
+  // },
+  // {
+  //   id: 3,
+  //   img: Img3,
+  //   title: "Goggles",
+  //   // rating: 4.7,
+  //   color: "From ₹199",
+  //   aosDelay: "400",
+  // },
+  // {
+  //   id: 4,
+  //   img: Img4,
+  //   title: "Printed T-Shirt",
+  //   // rating: 4.4,
+  //   color: "From ₹399",
+  //   aosDelay: "600",
+  // },
+  // {
+  //   id: 5,
+  //   img: Img12,
+  //   title: "Fashion T-Shirt",
+  //   // rating: 4.5,
+  //   color: "From 299",
+  //   aosDelay: "800",
+  // },
+  // {
+  //   id: 6,
+  //   img: Img13,
+  //   title: "Fashion T-Shirt",
+  //   // rating: 4.5,
+  //   color: "From ₹299",
+  //   aosDelay: "800",
+  // },
+
+
 ];
 
 export default Products;

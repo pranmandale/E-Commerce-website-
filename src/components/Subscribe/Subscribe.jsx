@@ -40,7 +40,7 @@ const Subscribe = () => {
               className='text-gray-900 cursor-pointer dark:text-white pt-3' 
               onClick={() => alert("Ordering not available yet")}
             >
-              Already have an account?
+              Already have an account? Login
             </p>
           </div>
         </div>
