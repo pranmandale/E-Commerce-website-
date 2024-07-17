@@ -30,6 +30,14 @@ import k5 from "../assets/kids/k5.jpg"
 import k6 from "../assets/kids/k6.jpg"
 import k7 from "../assets/kids/k7.webp"
 
+// products data
+import I1 from "../assets/Mobile/e3.webp";
+import I2 from "../assets/Mobile/w1.jpg";
+import I3 from "../assets/women/women3.jpg";
+import I4 from "../assets/women/women4.jpg";
+import i5 from "../assets/Mobile/f1.webp"
+import I6 from "../assets/Mobile/f2.webp"
+
 
 
 const Products = [
@@ -278,48 +286,48 @@ const Products = [
   // productsdata
 
   // {
-  //   id: 1,
-  //   img: Img1,
+  //   id: 26,
+  //   img: I1,
   //   title: "Women Ethnic",
   //   // rating: 5.0,
   //   color: "From ₹399",
   //   aosDelay: "0",
   // },
   // {
-  //   id: 2,
-  //   img: Img2,
+  //   id: 27,
+  //   img: I2,
   //   title: "Women Western",
   //   // rating: 4.5,
   //   color: "From ₹249",
   //   aosDelay: "200",
   // },
   // {
-  //   id: 3,
-  //   img: Img3,
+  //   id: 28,
+  //   img: I3,
   //   title: "Goggles",
   //   // rating: 4.7,
   //   color: "From ₹199",
   //   aosDelay: "400",
   // },
   // {
-  //   id: 4,
-  //   img: Img4,
+  //   id: 29,
+  //   img: I4,
   //   title: "Printed T-Shirt",
   //   // rating: 4.4,
   //   color: "From ₹399",
   //   aosDelay: "600",
   // },
   // {
-  //   id: 5,
-  //   img: Img12,
+  //   id: 30,
+  //   img: I5,
   //   title: "Fashion T-Shirt",
   //   // rating: 4.5,
   //   color: "From 299",
   //   aosDelay: "800",
   // },
   // {
-  //   id: 6,
-  //   img: Img13,
+  //   id: 31,
+  //   img: I6,
   //   title: "Fashion T-Shirt",
   //   // rating: 4.5,
   //   color: "From ₹299",

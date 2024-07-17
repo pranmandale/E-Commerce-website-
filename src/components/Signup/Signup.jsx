@@ -70,7 +70,11 @@ const SignUp = ({ onClose, onLoginClick }) => {
                             className={`w-full px-3 py-2 border rounded ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
                             type="text"
                             id="name"
-                            {...register('name', { required: 'Name is required', maxLength: { value: 128, message: 'Name must not exceed 128 characters' } })}
+                            {...register('name', { 
+                                required: 'Name is required', 
+                                maxLength: { value: 128, message: 'Name must not exceed 128 characters' } 
+                                })
+                            }
                         />
                         {errors.name && <p className="text-red-500 text-sm mt-1" aria-live="assertive">{errors.name.message}</p>}
                     </div>
@@ -83,8 +87,8 @@ const SignUp = ({ onClose, onLoginClick }) => {
                             {...register('email', {
                                 required: 'Email is required',
                                 pattern: {
-                                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                                    message: 'Invalid email address'
+                                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                                message: 'Invalid email address'
                                 }
                             })}
                         />
@@ -99,7 +103,7 @@ const SignUp = ({ onClose, onLoginClick }) => {
                                 id="password"
                                 {...register('password', {
                                     required: 'Password is required',
-                                    minLength: { value: 8, message: 'Password must be at least 8 characters' },
+                                    minLength: { value: 6, message: 'Password must be at least 8 characters' },
                                     maxLength: { value: 265, message: 'Password must not exceed 265 characters' }
                                 })}
                             />

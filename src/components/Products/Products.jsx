@@ -23,56 +23,58 @@ import Img19 from "../../assets/Mobile/j2.avif"
 import { FaStar } from 'react-icons/fa';
 import Slider from "react-slick"
 
-const ProductsData = [
-  {
-    id: 1,
-    img: Img1,
-    title: "Women Ethnic",
-    // rating: 5.0,
-    color: "From ₹399",
-    aosDelay: "0",
-  },
-  {
-    id: 2,
-    img: Img2,
-    title: "Women Western",
-    // rating: 4.5,
-    color: "From ₹249",
-    aosDelay: "200",
-  },
-  {
-    id: 3,
-    img: Img3,
-    title: "Goggles",
-    // rating: 4.7,
-    color: "From ₹199",
-    aosDelay: "400",
-  },
-  {
-    id: 4,
-    img: Img4,
-    title: "Printed T-Shirt",
-    // rating: 4.4,
-    color: "From ₹399",
-    aosDelay: "600",
-  },
-  {
-    id: 5,
-    img: Img12,
-    title: "Fashion T-Shirt",
-    // rating: 4.5,
-    color: "From 299",
-    aosDelay: "800",
-  },
-  {
-    id: 6,
-    img: Img13,
-    title: "Fashion T-Shirt",
-    // rating: 4.5,
-    color: "From ₹299",
-    aosDelay: "800",
-  },
-];
+import Product from '../../data/Products';
+
+// const ProductsData = [
+//   {
+//     id: 1,
+//     img: Img1,
+//     title: "Women Ethnic",
+//     // rating: 5.0,
+//     color: "From ₹399",
+//     aosDelay: "0",
+//   },
+//   {
+//     id: 2,
+//     img: Img2,
+//     title: "Women Western",
+//     // rating: 4.5,
+//     color: "From ₹249",
+//     aosDelay: "200",
+//   },
+//   {
+//     id: 3,
+//     img: Img3,
+//     title: "Goggles",
+//     // rating: 4.7,
+//     color: "From ₹199",
+//     aosDelay: "400",
+//   },
+//   {
+//     id: 4,
+//     img: Img4,
+//     title: "Printed T-Shirt",
+//     // rating: 4.4,
+//     color: "From ₹399",
+//     aosDelay: "600",
+//   },
+//   {
+//     id: 5,
+//     img: Img12,
+//     title: "Fashion T-Shirt",
+//     // rating: 4.5,
+//     color: "From 299",
+//     aosDelay: "800",
+//   },
+//   {
+//     id: 6,
+//     img: Img13,
+//     title: "Fashion T-Shirt",
+//     // rating: 4.5,
+//     color: "From ₹299",
+//     aosDelay: "800",
+//   },
+// ];
 
 const SmartPhone = [
   {
@@ -230,16 +232,44 @@ const Products = () => {
         {/* Body section */}
         <div>
           <h1 className='pb-5 text-2xl font-bold'>Best Deals on Fashions</h1>
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             {ProductsData.map((data) => (
-              <div key={data.id} className=' space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md'>
+              <div key={data.id} className=' space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md'
+              onClick={() => navigate(`/product/${data.id}`)}
+              >
                 <img src={data.img} alt='' className='h-[200px] w-[150px] object-cover' />
                 <div>
                   <h3 className='font-semibold'>{data.title}</h3>
                   <p className='text-sm text-gray-600 dark:text-gray-400'>{data.color}</p>
                   <div className='flex items-center gap-1'>
-                    {/* <FaStar className='text-yellow-500' /> */}
-                    {/* <span>{data.rating}</span> */}
+                    
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider> */}
+          {/* <div 
+                className="flex bg-white dark:bg-gray-800 p-4 w-full rounded-lg py-10 cursor-pointer shadow-md"
+                onClick={() => navigate(`/product/${product.id}`)} >
+                <img src={product.img} alt={product.title} className="w-52 h-63 object-cover rounded-lg mr-8" />
+                <div className="flex flex-col justify-between">
+                  <div className='ml-6'>
+                    <h3 className="text-lg font-semibold">{product.title}</h3>
+                    <p className="mt-2">{product.color}</p>
+                  </div>
+                </div> */}
+
+          <Slider {...settings}>
+            {Product.map((data) => (
+              <div key={data.id} className=' space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md'
+              onClick={() => navigate(`/product/${data.id}`)}
+              >
+                <img src={data.img} alt='{data.title}' className='h-[200px] w-[150px] object-cover' />
+                <div>
+                  <h3 className='font-semibold'>{data.title}</h3>
+                  <p className='text-sm text-gray-600 dark:text-gray-400'>{data.color}</p>
+                  <div className='flex items-center gap-1'>
+                    
                   </div>
                 </div>
               </div>
