@@ -1,4 +1,3 @@
-// src/components/Login/Login.js
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../authcontext/AuthContext';
@@ -20,10 +19,10 @@ const Login = ({ onClose, onSignupClick }) => {
             onClose(); // Close the login modal upon successful login
         } catch (error) {
             console.error('Error details:', error);
-            if (error.code === 401) {
-                setErrorMessage('Invalid email or password. Please try again.');
+            if (error.message === 'Failed to fetch') {
+                setErrorMessage('Network error. Please check your internet connection.');
             } else {
-                setErrorMessage(`Failed to log in: ${error.message}`);
+                setErrorMessage('Failed to log in. Please check your credentials and try again.');
             }
         }
     };
@@ -50,10 +49,7 @@ const Login = ({ onClose, onSignupClick }) => {
                             className={`w-full px-3 py-2 border rounded ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
                             type="password"
                             id="password"
-                            {...register('password', { 
-                                required: 'Password is required' 
-                                })
-                            }
+                            {...register('password', { required: 'Password is required' })}
                         />
                         {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
                     </div>
@@ -74,12 +70,7 @@ const Login = ({ onClose, onSignupClick }) => {
                     </div>
                     <div className="mt-4">
                         <p>Don't have an account? 
-                        <span 
-                        className="text-blue-500 cursor-pointer" 
-                        onClick={onSignupClick}
-                        >
-                        Sign up
-                        </span>
+                            <span className="text-blue-500 cursor-pointer" onClick={onSignupClick}>Sign up</span>
                         </p>
                     </div>
                 </form>
