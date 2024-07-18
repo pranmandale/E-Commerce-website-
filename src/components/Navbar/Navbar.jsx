@@ -1,21 +1,22 @@
-// src/components/Navbar/Navbar.js
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../authcontext/AuthContext';
 import logo from "../../assets/logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import Fuse from 'fuse.js';
 import Products from '../../data/Products';
-import { useAuth } from '../authcontext/AuthContext'; // Adjust the import path as needed
+import { CartContext, useCart } from '../cartcontext/CartContext';
 
-const Navbar = ({ onSearch, onOpenAuthModal }) => {
+const Navbar = ({ onOpenAuthModal }) => {
+    const { user, logout } = useAuth();
     const [darkMode, setDarkMode] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [suggestions, setSuggestions] = useState([]);
-    const { user, logout, loading } = useAuth(); // Get the user, logout function, and loading state from the AuthContext
+    const { addItemToCart } = useContext(CartContext);
 
-    // Fuse.js configuration for search
     const fuse = new Fuse(Products, {
         keys: ['title', 'color'],
         includeScore: true,
@@ -32,7 +33,6 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
     const handleSearch = (event) => {
         const query = event.target.value;
         setSearchTerm(query);
-        onSearch(query);
 
         if (query.trim() === '') {
             setSuggestions([]);
@@ -58,19 +58,17 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
     ];
 
     const LoginLinks = [
-        { id: 3, name: "My Cart", link: "/#" },
+        { id: 3, name: "My Cart", link: "/cart" },
     ];
 
-    useEffect(() => {
-        if (!loading) {
-            setSearchTerm('');
-            setSuggestions([]);
-        }
-    }, [loading]);
+    const { cartItems } = useCart();
+
+    const addToCart = (product) => {
+        addItemToCart(product);
+    };
 
     return (
         <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
-            {/* Upper Navbar */}
             <div className="bg-primary/40 py-2">
                 <div className="container flex justify-between items-center">
                     <div>
@@ -80,7 +78,6 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                         </Link>
                     </div>
                     <div className="flex justify-between items-center gap-4">
-                        {/* Search bar */}
                         <div className="relative group hidden sm:block">
                             <input
                                 type="text"
@@ -99,7 +96,6 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                                             onClick={() => {
                                                 setSearchTerm(suggestion.title);
                                                 setSuggestions([]);
-                                                onSearch(suggestion.title);
                                             }}
                                         >
                                             {suggestion.title}
@@ -108,23 +104,18 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                                 </div>
                             )}
                         </div>
-                        {/* Profile dropdown */}
                         <div className='relative group flex items-center gap-1 pr-2 '>
                             <CgProfile className='text-gray-900 cursor-pointer dark:text-white' />
                             {user ? (
                                 <>
-                                    <span
-                                        className="group relative items-center py-2 font-semibold cursor-pointer hover:text-primary"
-                                    >
+                                    <span className="group relative items-center py-2 font-semibold cursor-pointer hover:text-primary">
                                         Hello, {user.name}
                                     </span>
                                     <span>
                                         <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                                     </span>
                                     <div className='pt-6 text-center '>
-                                        <div 
-                                            className="absolute hidden z-[9999] right-1 group-hover:block w-[130px] rounded-md bg-white dark:bg-gray-700 p-2 text-black dark:text-white shadow-md" 
-                                        >
+                                        <div className="absolute hidden z-[9999] right-1 group-hover:block w-[130px] rounded-md bg-white dark:bg-gray-700 p-2 text-black dark:text-white shadow-md">
                                             <ul>
                                                 {LoginLinks.map((data) => (
                                                     <li key={data.id}>
@@ -134,12 +125,9 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                                                     </li>
                                                 ))}
                                                 <li>
-                                                    <span 
-                                                        className="inline-block w-full rounded-md p-2 hover:bg-primary/20 cursor-pointer"
-                                                        onClick={logout}
-                                                    >
+                                                    <button onClick={logout} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
                                                         Logout
-                                                    </span>
+                                                    </button>
                                                 </li>
                                             </ul>
                                         </div>
@@ -148,7 +136,7 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                             ) : (
                                 <>
                                     <span
-                                        onClick={() => onOpenAuthModal('login')} // Open login form directly
+                                        onClick={() => onOpenAuthModal()} // Open login form directly
                                         className="group relative items-center py-2 font-semibold cursor-pointer hover:text-primary"
                                     >
                                         Log in
@@ -159,28 +147,15 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                                 </>
                             )}
                         </div>
-                        {/* Dark mode switch */}
                         <div>
                             <label className="relative inline-flex items-center cursor-pointer">
                                 <input
                                     type="checkbox"
+                                    className="sr-only peer"
                                     checked={darkMode}
                                     onChange={toggleDarkMode}
-                                    className="sr-only peer"
                                 />
-                                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none 
-                                peer-focus:ring-4 peer-focus:ring-primary 
-                                dark:peer-focus:ring-secondary rounded-full peer 
-                                dark:bg-gray-700 peer-checked:after:translate-x-full 
-                                peer-checked:after:border-white after:content-[''] 
-                                after:absolute after:top-[2px] 
-                                after:left-[2px] after:bg-white 
-                                after:border-gray-300 after:border 
-                                after:rounded-full after:h-5 
-                                after:w-5 after:transition-all 
-                                dark:border-gray-600 
-                                peer-checked:bg-primary 
-                                peer-checked:dark:bg-secondary"></div>
+                                <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-primary dark:peer-focus:ring-secondary dark:bg-gray-700 peer-checked:bg-primary dark:peer-checked:bg-secondary peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600"></div>
                             </label>
                         </div>
                     </div>
@@ -191,31 +166,14 @@ const Navbar = ({ onSearch, onOpenAuthModal }) => {
                 <ul className="sm:flex hidden items-center gap-4">
                     {Menu.map((data) => (
                         <li key={data.id}>
-                            <Link to={data.link} className="inline-block px-4 hover:text-primary duration-200">
+                            <Link
+                                to={data.link}
+                                className="py-7 px-3 inline-block font-semibold hover:text-primary dark:hover:text-secondary"
+                            >
                                 {data.name}
                             </Link>
                         </li>
                     ))}
-                    {/* Dropdown */}
-                    <li className="group relative cursor-pointer">
-                        <span className="flex items-center gap-[2px] py-2">
-                            Trending Products
-                            <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
-                        </span>
-                        <div className="absolute hidden z-[9999] group-hover:block w-[150px] 
-                            rounded-md bg-white dark:bg-gray-700 
-                            p-2 text-black dark:text-white shadow-md">
-                            <ul>
-                                {DropdownLinks.map((data) => (
-                                    <li key={data.id}>
-                                        <Link to={data.link} className="inline-block w-full rounded-md p-2 hover:bg-primary/20">
-                                            {data.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>

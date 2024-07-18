@@ -1,50 +1,10 @@
-// // AuthContext.js
-// import React, { createContext, useState, useContext, useEffect } from 'react';
-// import { account } from '../appwrite/Appwrite';
-
-// const AuthContext = createContext();
-
-// export const useAuth = () => useContext(AuthContext);
-
-// export const AuthProvider = ({ children }) => {
-//     const [user, setUser] = useState(null);
-
-//     const fetchUser = async () => {
-//         try {
-//             const response = await account.get();
-//             setUser(response);
-//         } catch (error) {
-//             setUser(null);
-//         }
-//     };
-
-//     useEffect(() => {
-//         fetchUser();
-//     }, []);
-
-//     const login = async (email, password) => {
-//         const response = await account.createEmailSession(email, password);
-//         setUser(response);
-//     };
-
-//     const logout = async () => {
-//         await account.deleteSession('current');
-//         setUser(null);
-//     };
-
-//     const value = { user, login, logout };
-
-//     return (
-//         <AuthContext.Provider value={value}>
-//             {children}
-//         </AuthContext.Provider>
-//     );
-// };
 
 
-// src/authcontext/AuthContext.js
+
+
+
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { account } from '../appwrite/Appwrite'; // Adjust the import path as needed
+import { account } from '../appwrite/Appwrite';
 
 const AuthContext = createContext();
 
@@ -53,6 +13,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [cart, setCart] = useState([]);
 
     const fetchUser = async () => {
         try {
@@ -73,9 +34,9 @@ export const AuthProvider = ({ children }) => {
         try {
             await account.createEmailPasswordSession(email, password);
             await fetchUser();
-            localStorage.setItem('auth', 'true'); // Store authentication state
+            localStorage.setItem('auth', 'true');
         } catch (error) {
-            console.error('Login error:', error); // Log the error details
+            console.error('Login error:', error);
             throw error;
         }
     };
@@ -83,10 +44,20 @@ export const AuthProvider = ({ children }) => {
     const logout = async () => {
         await account.deleteSession('current');
         setUser(null);
-        localStorage.removeItem('auth'); // Remove authentication state
+        setCart([]);
+        localStorage.removeItem('auth');
     };
 
-    const value = { user, login, logout, loading };
+    const addItemToCart = (product) => {
+        setCart((prevCart) => [...prevCart, product]);
+        console.log(`Added to cart: ${product.title}`);
+    };
+
+    const removeItemFromCart = (productId) => {
+        setCart((prevCart) => prevCart.filter(item => item.id !== productId));
+    };
+
+    const value = { user, login, logout, loading, cart, addItemToCart, removeItemFromCart };
 
     return (
         <AuthContext.Provider value={value}>
@@ -94,3 +65,7 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+
+
+// https://docs.google.com/forms/d/e/1FAIpQLSfadAX6vdlSHAbi8mZNbxuXk9QeJMNpoNvP5hE8LuGa9yJB_w/viewform?usp=sf_link
