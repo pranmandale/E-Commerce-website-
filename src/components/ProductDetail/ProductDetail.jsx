@@ -1,13 +1,14 @@
 
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Products from '../../data/Products'; // Adjust the path to your product data
-import { useCart } from '../cartcontext/CartContext'; // Import useCart from CartContext
+import Products from '../../data/Products';
+import { useCart } from '../cartcontext/CartContext';
+import { useAuth } from '../authcontext/AuthContext';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { addItemToCart } = useCart(); // Get addItemToCart from CartContext
+  const { addItemToCart } = useCart();
+  const { user, loading } = useAuth();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -16,10 +17,28 @@ const ProductDetail = () => {
   }, [id]);
 
   const handleAddToCart = (product, event) => {
-    event.stopPropagation(); // Prevent navigation on button click
+    event.stopPropagation();
+    if (!user) {
+      alert('Please log in to add items to the cart.');
+      return;
+    }
     addItemToCart(product);
+    alert('Item Added to cart');
     console.log('Item added to cart:', product);
   };
+
+  const handleBuyNow = (event) => {
+    event.stopPropagation();
+    if (!user) {
+      alert('Please log in to proceed with the purchase.');
+      return;
+    }
+    // Implement Buy Now logic here
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   if (!product) {
     return <div>Loading...</div>;
@@ -43,6 +62,7 @@ const ProductDetail = () => {
             Add to Cart
           </button>
           <button
+            onClick={handleBuyNow}
             className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 hover:scale-105 duration-200 
             text-white py-3 px-6 rounded-full shadow-md"
           >
@@ -55,5 +75,3 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-
-
