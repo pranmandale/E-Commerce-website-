@@ -35,12 +35,30 @@ import I1 from "../assets/Mobile/e3.webp";
 import I2 from "../assets/Mobile/w1.jpg";
 import I3 from "../assets/women/women3.jpg";
 import I4 from "../assets/women/women4.jpg";
-import i5 from "../assets/Mobile/f1.webp"
+import I5 from "../assets/Mobile/f1.webp"
 import I6 from "../assets/Mobile/f2.webp"
 
+// smartphones images
+
+import s1 from "../assets/Mobile/p1.jpg";
+import s2 from "../assets/Mobile/p2.jpg";
+import s3 from "../assets/Mobile/v1.jpg";
+import s4 from "../assets/Mobile/v2.png";
+import s5 from "../assets/Mobile/v3.webp";
+import s6 from "../assets/Mobile/v5.webp";
 
 
-const Products = [
+// Best Deals images
+
+import B1 from "../assets/Mobile/s1.jpg";
+import B2 from "../assets/Mobile/s2.jpg";
+import B3 from "../assets/Mobile/wa1.jpg";
+import B4 from "../assets/Mobile/e2.webp";
+import B5 from "../assets/Mobile/j1.avif";
+import B6 from "../assets/Mobile/j2.avif";
+
+
+ const Products = [
   {
     id: 1,
     img: Img10,
@@ -113,18 +131,8 @@ const Products = [
     aosDelay: "800",
     category: "mobile", // Added category
   },
-  // {
-  //   id: 5,
-  //   img: Img9,
-  //   title: "vivo T3 series",
-  //   color: "From ₹16999",
-  //   aosDelay: "800",
-  //   category: "electronics", // Added category
-  // },
- 
-  // Add more products with their respective categories if needed
-
-  // electronics secion
+  
+  // electronics section
   {
     id: 9,
     img: p,
@@ -285,56 +293,169 @@ const Products = [
 
   // productsdata
 
-  // {
-  //   id: 26,
-  //   img: I1,
-  //   title: "Women Ethnic",
-  //   // rating: 5.0,
-  //   color: "From ₹399",
-  //   aosDelay: "0",
-  // },
-  // {
-  //   id: 27,
-  //   img: I2,
-  //   title: "Women Western",
-  //   // rating: 4.5,
-  //   color: "From ₹249",
-  //   aosDelay: "200",
-  // },
-  // {
-  //   id: 28,
-  //   img: I3,
-  //   title: "Goggles",
-  //   // rating: 4.7,
-  //   color: "From ₹199",
-  //   aosDelay: "400",
-  // },
-  // {
-  //   id: 29,
-  //   img: I4,
-  //   title: "Printed T-Shirt",
-  //   // rating: 4.4,
-  //   color: "From ₹399",
-  //   aosDelay: "600",
-  // },
-  // {
-  //   id: 30,
-  //   img: I5,
-  //   title: "Fashion T-Shirt",
-  //   // rating: 4.5,
-  //   color: "From 299",
-  //   aosDelay: "800",
-  // },
-  // {
-  //   id: 31,
-  //   img: I6,
-  //   title: "Fashion T-Shirt",
-  //   // rating: 4.5,
-  //   color: "From ₹299",
-  //   aosDelay: "800",
-  // },
+  {
+    id: 26,
+    img: I1,
+    title: "Women Ethnic",
+    // rating: 5.0,
+    color: "From ₹399",
+    aosDelay: "0",
+      category: "product1",
+  },
+  {
+    id: 27,
+    img: I2,
+    title: "Women Western",
+    // rating: 4.5,
+    color: "From ₹249",
+    aosDelay: "200",
+     category: "product1",
+  },
+  {
+    id: 28,
+    img: I3,
+    title: "Goggles",
+    // rating: 4.7,
+    color: "From ₹199",
+    aosDelay: "400",
+      category: "product1",
+  },
+  {
+    id: 29,
+    img: I4,
+    title: "Printed T-Shirt",
+    // rating: 4.4,
+    color: "From ₹399",
+    aosDelay: "600",
+      category: "product1",
+  },
+  {
+    id: 30,
+    img: I5,
+    title: "Fashion T-Shirt",
+    // rating: 4.5,
+    color: "From 299",
+    aosDelay: "800",
+    category: "product1",
+  },
+  {
+    id: 31,
+    img: I6,
+    title: "Fashion T-Shirt",
+    // rating: 4.5,
+    color: "From ₹299",
+    aosDelay: "800",
+    category: "product1",
+  },
+
+  
+
+  // smartphones data
+
+  {
+    id: 32,
+    img: s1,
+    title: "Blue Poco X3",
+    // rating: 4.5,
+    color: "From ₹9999",
+    aosDelay: "800",
+  },
+  {
+    id: 33,
+    img: s2,
+    title: "Black Poco X3",
+    // rating: 4.5,
+    color: "From ₹10999",
+    aosDelay: "800",
+  },
+  {
+    id: 34,
+    img: s3,
+    title: "Fhd Glow Y21 vivo",
+    // rating: 4.5,
+    color: "From ₹13999",
+    aosDelay: "800",
+  },
+  {
+    id: 35,
+    img: s4,
+    title: "vivo X100",
+    // rating: 4.5,
+    color: "From ₹14999",
+    aosDelay: "800",
+  },
+  {
+    id: 36,
+    img: s5,
+    title: "vovo T3 series",
+    // rating: 4.5,
+    color: "From ₹18999",
+    aosDelay: "800",
+  },
+  {
+    id: 37,
+    img: s6,
+    title: "Blue vivo V15",
+    // rating: 4.5,
+    color: "From ₹13999",
+    aosDelay: "800",
+  },
+
+
+
+  // BestDeals
+
+  {
+        id: 38,
+        img: B1,
+        title: "casual shoes for men",
+        // rating: 4.5,
+        color: "From ₹399",
+        aosDelay: "800",
+      },
+      {
+        id: 39,
+        img: B2,
+        title: "Leather Shoes for men",
+        // rating: 4.5,
+        color: "From ₹399",
+        aosDelay: "800",
+      },
+      {
+        id: 40,
+        img: B3,
+        title: "wallet",
+        // rating: 4.5,
+        color: "From ₹99",
+        aosDelay: "800",
+      },
+      {
+        id: 41,
+        img: B4,
+        title: "Bose earbuds",
+        // rating: 4.5,
+        color: "From ₹799",
+        aosDelay: "800",
+      },
+      {
+        id: 42,
+        img: B5,
+        title: "Mid rise fid jeans",
+        // rating: 4.5,
+        color: "From ₹999",
+        aosDelay: "800",
+      },
+      {
+        id: 43,
+        img: B6,
+        title: "jeans for mens",
+        // rating: 4.5,
+        color: "From ₹899",
+        aosDelay: "800",
+      },
 
 
 ];
 
 export default Products;
+
