@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: "/E-Commerce-website-", // Adjust base URL as needed
   build: {
-    outDir: 'build', // Specify the output directory
+    // outDir: 'build', // Specify the output directory
+    outDir: 'dist'
   },
 });
