@@ -7,7 +7,7 @@ export default defineConfig({
    base: "/E-Commerce-website-", // Adjust base URL as needed
   //  base: '/',
   build: {
-    // outDir: 'build', // Specify the output directory
-    outDir: 'dist'
+    outDir: 'build', // Specify the output directory
+    // outDir: 'dist'
   },
 });
