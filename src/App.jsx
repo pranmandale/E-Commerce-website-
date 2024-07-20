@@ -13,6 +13,7 @@ import SearchResults from './components/SearchResults/SearchResults';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import AuthModal from './components/AuthModel/AuthModel';
 import Products from './components/Products/Products';
+import Top from './components/TopRatedProductList/Top'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Cart from './components/cart/Cart';
@@ -48,6 +49,7 @@ const App = () => {
                         <Navbar onOpenAuthModal={handleOpenAuthModal} />
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/top-products" element={<Top category="product2" />}/>
                             <Route path="/kids-wear" element={<KProductList category="kids" />} />
                             <Route path="/mens-wear" element={<ProductList category="mobile" />} />
                             <Route path="/electronics" element={<EProductList category="electronics" />} />

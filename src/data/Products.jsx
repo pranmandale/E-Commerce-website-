@@ -358,7 +358,10 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Blue Poco X3",
     // rating: 4.5,
     color: "From ₹9999",
+    // category="smartphone",
     aosDelay: "800",
+    category: "product1",
+    
   },
   {
     id: 33,
@@ -367,6 +370,7 @@ import B6 from "../assets/Mobile/j2.avif";
     // rating: 4.5,
     color: "From ₹10999",
     aosDelay: "800",
+    category: "product1",
   },
   {
     id: 34,
@@ -375,6 +379,7 @@ import B6 from "../assets/Mobile/j2.avif";
     // rating: 4.5,
     color: "From ₹13999",
     aosDelay: "800",
+    category: "product2", 
   },
   {
     id: 35,
@@ -383,6 +388,7 @@ import B6 from "../assets/Mobile/j2.avif";
     // rating: 4.5,
     color: "From ₹14999",
     aosDelay: "800",
+    // category="smartphone",
   },
   {
     id: 36,
@@ -391,6 +397,7 @@ import B6 from "../assets/Mobile/j2.avif";
     // rating: 4.5,
     color: "From ₹18999",
     aosDelay: "800",
+    category: "product",
   },
   {
     id: 37,
@@ -399,6 +406,7 @@ import B6 from "../assets/Mobile/j2.avif";
     // rating: 4.5,
     color: "From ₹13999",
     aosDelay: "800",
+    // category="smartphone",
   },
 
 
@@ -420,6 +428,7 @@ import B6 from "../assets/Mobile/j2.avif";
         // rating: 4.5,
         color: "From ₹399",
         aosDelay: "800",
+        category: "product2",
       },
       {
         id: 40,
@@ -428,6 +437,7 @@ import B6 from "../assets/Mobile/j2.avif";
         // rating: 4.5,
         color: "From ₹99",
         aosDelay: "800",
+        category: "product2",
       },
       {
         id: 41,
@@ -436,6 +446,7 @@ import B6 from "../assets/Mobile/j2.avif";
         // rating: 4.5,
         color: "From ₹799",
         aosDelay: "800",
+        category: "product2",
       },
       {
         id: 42,
@@ -452,6 +463,7 @@ import B6 from "../assets/Mobile/j2.avif";
         // rating: 4.5,
         color: "From ₹899",
         aosDelay: "800",
+        category: "product2",
       },
 
 

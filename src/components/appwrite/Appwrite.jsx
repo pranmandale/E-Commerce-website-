@@ -1,41 +1,4 @@
-// import { Client, Account, Databases } from 'appwrite';
 
-// console.log('Appwrite Endpoint:', import.meta.env.VITE_APPWRITE_ENDPOINT);
-// console.log('Appwrite Project ID:', import.meta.env.VITE_APPWRITE_PROJECT_ID);
-
-// const client = new Client();
-// client
-//     .setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT)
-//     .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID);
-
-// const account = new Account(client);
-// const databases = new Databases(client);
-
-// export { client, account, databases };
-
-// import { Client, Account, Databases } from 'appwrite';
-
-// const client = new Client();
-// const account = new Account(client);
-// const databases = new Databases(client);
-
-// client
-//     .setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT) // Your API Endpoint
-//     .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID); // Your project ID
-
-// export const createAccount = async (userId, email, password, name) => {
-//     return await account.create(userId, email, password, name);
-// };
-
-// export const createSession = async (email, password) => {
-//     return await account.createEmailSession(email, password);
-// };
-
-// export const createDocument = async (databaseId, collectionId, documentId, data, read, write) => {
-//     return await databases.createDocument(databaseId, collectionId, documentId, data, read, write);
-// };
-
-// export { client, account, databases };
 
 
 import { Client, Account, Databases } from 'appwrite';

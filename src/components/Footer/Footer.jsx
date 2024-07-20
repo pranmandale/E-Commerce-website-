@@ -86,15 +86,15 @@ const Footer = () => {
             
             <div>
               <div className='flex items-center gap-3 mt-6'>
-                  <a href='#'>
+                  <a href='https://www.instagram.com/_pranav_mandale_/?hl=en' target='_blank'>
                   <FaInstagram className='text-3xl'/>
                   </a>
 
-                  <a href='#'>
+                  <a href='https://www.facebook.com/profile.php?id=61561444047865' target='_blank'>
                   <FaFacebook className='text-3xl'/>
                   </a>
 
-                  <a href='#'>
+                  <a href='https://www.linkedin.com/in/pranav-mandale-765a60224/' target='_blank'>
                   <FaLinkedin className='text-3xl'/>
                   </a>
 
