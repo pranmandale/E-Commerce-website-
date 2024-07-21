@@ -1,34 +1,15 @@
 import React from 'react'
-import Img1 from "../../assets/shirt/shirt.png"
-import Img2 from "../../assets/shirt/shirt2.png"
-import Img3 from "../../assets/shirt/shirt3.png"
+import { useNavigate } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa'
+import Product from '../../data/Products';
 
-const ProductsData = [
-  {
-    id: 1,
-    img: Img1,
-    title: "Casual Wear",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: 2,
-    img: Img2,
-    title: "Printed shirt",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: 3,
-    img: Img3,
-    title: "Women shirt",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-]
+
 
 const TopProducts = () => {
+  const navigate = useNavigate();
+
+
+  const filteredProducts = Product.filter(product => product.id >= 44 && product.id <= 46);
   return (
     <div className='mt-0 pt-6 pb-4 bg-gray-100 dark:bg-gray-900 dark:text-white'>
       <div className='container'>
@@ -57,13 +38,15 @@ const TopProducts = () => {
         className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-5 place-items-center'
         >
             {
-                ProductsData.map((data) => (
+              filteredProducts.map((data) => (
                     <div
+                    key={data.id}
 
                     // animations added
                     // data-aos="zoom-in"
-                    className='rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary
+                    className='rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 hover:
                     hover:text-white relative shadow-xl duration-300 group max-w-[300px]'
+                    
                     >
                     {/* image section */}
                       <div className='h-[100px]'>
@@ -91,6 +74,7 @@ const TopProducts = () => {
                           className='bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4
                           group-hover:bg-primary group:hover:text-primary'
                           // onClick={handleOrderPopup}
+                          onClick={() => navigate(`/product/${data.id}`)}
                           >
                           Order Now
                           </button>

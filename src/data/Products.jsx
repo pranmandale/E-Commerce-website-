@@ -57,6 +57,11 @@ import B4 from "../assets/Mobile/e2.webp";
 import B5 from "../assets/Mobile/j1.avif";
 import B6 from "../assets/Mobile/j2.avif";
 
+// top three products
+import t1 from "../assets/shirt/shirt.png"
+import t2 from "../assets/shirt/shirt2.png"
+import t3 from "../assets/shirt/shirt3.png"
+
 
  const Products = [
   {
@@ -299,6 +304,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Women Ethnic",
     // rating: 5.0,
     color: "From ₹399",
+    price: 399,
     aosDelay: "0",
       category: "product1",
   },
@@ -308,6 +314,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Women Western",
     // rating: 4.5,
     color: "From ₹249",
+    price: 249,
     aosDelay: "200",
      category: "product1",
   },
@@ -317,6 +324,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Goggles",
     // rating: 4.7,
     color: "From ₹199",
+    price: 199,
     aosDelay: "400",
       category: "product1",
   },
@@ -326,6 +334,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Printed T-Shirt",
     // rating: 4.4,
     color: "From ₹399",
+    price: 399,
     aosDelay: "600",
       category: "product1",
   },
@@ -335,6 +344,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Fashion T-Shirt",
     // rating: 4.5,
     color: "From 299",
+    price: 299,
     aosDelay: "800",
     category: "product1",
   },
@@ -344,6 +354,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Fashion T-Shirt",
     // rating: 4.5,
     color: "From ₹299",
+    price: 299,
     aosDelay: "800",
     category: "product1",
   },
@@ -358,6 +369,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Blue Poco X3",
     // rating: 4.5,
     color: "From ₹9999",
+    price: 9999,
     // category="smartphone",
     aosDelay: "800",
     category: "product1",
@@ -369,6 +381,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Black Poco X3",
     // rating: 4.5,
     color: "From ₹10999",
+    price: 10999,
     aosDelay: "800",
     category: "product1",
   },
@@ -378,6 +391,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Fhd Glow Y21 vivo",
     // rating: 4.5,
     color: "From ₹13999",
+    price: 13999,
     aosDelay: "800",
     category: "product2", 
   },
@@ -387,6 +401,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "vivo X100",
     // rating: 4.5,
     color: "From ₹14999",
+    price: 14999,
     aosDelay: "800",
     // category="smartphone",
   },
@@ -396,6 +411,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "vovo T3 series",
     // rating: 4.5,
     color: "From ₹18999",
+    price: 18999,
     aosDelay: "800",
     category: "product",
   },
@@ -405,6 +421,7 @@ import B6 from "../assets/Mobile/j2.avif";
     title: "Blue vivo V15",
     // rating: 4.5,
     color: "From ₹13999",
+    price: 13999,
     aosDelay: "800",
     // category="smartphone",
   },
@@ -419,6 +436,7 @@ import B6 from "../assets/Mobile/j2.avif";
         title: "casual shoes for men",
         // rating: 4.5,
         color: "From ₹399",
+        price: 399,
         aosDelay: "800",
       },
       {
@@ -427,6 +445,7 @@ import B6 from "../assets/Mobile/j2.avif";
         title: "Leather Shoes for men",
         // rating: 4.5,
         color: "From ₹399",
+        price: 399,
         aosDelay: "800",
         category: "product2",
       },
@@ -436,6 +455,7 @@ import B6 from "../assets/Mobile/j2.avif";
         title: "wallet",
         // rating: 4.5,
         color: "From ₹99",
+        price: 99,
         aosDelay: "800",
         category: "product2",
       },
@@ -445,6 +465,7 @@ import B6 from "../assets/Mobile/j2.avif";
         title: "Bose earbuds",
         // rating: 4.5,
         color: "From ₹799",
+        price: 799,
         aosDelay: "800",
         category: "product2",
       },
@@ -454,6 +475,7 @@ import B6 from "../assets/Mobile/j2.avif";
         title: "Mid rise fid jeans",
         // rating: 4.5,
         color: "From ₹999",
+        price: 899,
         aosDelay: "800",
       },
       {
@@ -462,8 +484,38 @@ import B6 from "../assets/Mobile/j2.avif";
         title: "jeans for mens",
         // rating: 4.5,
         color: "From ₹899",
+        price: 899,
         aosDelay: "800",
         category: "product2",
+      },
+
+
+      // top three products
+
+
+      {
+        id: 44,
+        img: t1,
+        title: "Casual Wear",
+        price: 899,
+        description:
+          "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      },
+      {
+        id: 45,
+        img: t2,
+        title: "Printed shirt",
+        price: 899,
+        description:
+          "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      },
+      {
+        id: 46,
+        img: t3,
+        title: "Women shirt",
+        price: 899,
+        description:
+          "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
 
 

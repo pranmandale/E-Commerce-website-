@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom";
 import EProducts from '../../data/Products'; 
 
 const ProductList = ({ category }) => {
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
-  const navigate = useNavigate(); // Initialize navigate function
+  const navigate = useNavigate();
 
   const priceRanges = [
     { label: 'Below ₹10,000', min: 0, max: 9999 },
@@ -19,9 +19,9 @@ const ProductList = ({ category }) => {
   };
 
   const filteredProducts = EProducts.filter(product => {
-    const productPrice = parseFloat(product.color.replace(/[^\d.]/g, ''));
-    const isCategoryMatch = product.category === category;
-    const isPriceMatch = !selectedPriceRange || (productPrice >= selectedPriceRange.min && productPrice <= selectedPriceRange.max);
+    const productPrice = product.color ? parseFloat(product.color.replace(/[^\d.]/g, '')) : NaN;
+    const isCategoryMatch = product.category && product.category.toLowerCase() === category.toLowerCase();
+    const isPriceMatch = !selectedPriceRange || (!isNaN(productPrice) && productPrice >= selectedPriceRange.min && productPrice <= selectedPriceRange.max);
     return isCategoryMatch && isPriceMatch;
   });
 
@@ -52,7 +52,7 @@ const ProductList = ({ category }) => {
             <div key={product.id} className="mb-4">
               <div 
                 className="flex bg-white dark:bg-gray-800 p-4 w-full rounded-lg py-10 cursor-pointer shadow-md"
-                onClick={() => navigate(`/product/${product.id}`)} // Navigate to product detail page
+                onClick={() => navigate(`/product/${product.id}`)}
               >
                 <img src={product.img} alt={product.title} className="w-52 h-63 object-cover rounded-lg mr-8" />
                 <div className="flex flex-col justify-between">

@@ -1,7 +1,8 @@
 import React from 'react'
 import FooteLogo from "../../assets/logo.png"
 import Banner from "../../assets/website/footer-pattern.jpg"
-import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt, FaTwitter} from 'react-icons/fa';
+
 
 const BannerImg = {
     backgroundImage: `url(${Banner})`,
@@ -107,6 +108,7 @@ const Footer = () => {
                     <FaLocationArrow/>
                     <p>Sangli, Maharashtra</p>
                   </div>
+
 
                   <div className='flex items-center gap-3'>
                     <FaMobileAlt/>
