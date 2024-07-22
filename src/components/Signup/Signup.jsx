@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { createAccount, createSession, createDocument } from '../appwrite/Appwrite'; // Adjust the path as per your project structure
+import { createAccount, createSession } from '../appwrite/Appwrite'; // Adjust the path as per your project structure
 import { v4 as uuidv4 } from 'uuid';
 
 const SignUp = ({ onClose, onLoginClick }) => {

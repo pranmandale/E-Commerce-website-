@@ -6,6 +6,7 @@ import Product from '../../data/Products';
 
 
 const TopProducts = () => {
+  // navigation to productdetail page
   const navigate = useNavigate();
 
 
