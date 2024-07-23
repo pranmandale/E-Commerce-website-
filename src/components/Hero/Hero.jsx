@@ -15,7 +15,7 @@ const ImageList = [
     {
         id: 2,
         img: Image1,
-        title: "Upto 40% off on all Women's wear",
+        title: "Biggest Discount Offers in this winter",
         descritption: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, ipsam cum beatae itaque perspiciatis voluptatum earum eligendi quod sequi harum!"
     },
 
@@ -61,7 +61,7 @@ const Hero = () => {
                 {/* Text content section */}
                 <div className='flex flex-col justify-center gap-4 pl-7 pt-12 sm:pt-0 text-center sm:text-left 
                 order-2 sm:order-1 relative z-10'>
-                  <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold'>
+                  <h1 className='text-5xl sm:text-6xl lg:text-6xl font-bold'>
                     {data.title}
                   </h1>
                   <p className='text-sm'>

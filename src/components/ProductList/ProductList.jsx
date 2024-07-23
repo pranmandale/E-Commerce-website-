@@ -12,7 +12,7 @@ const ProductList = ({ category }) => {
     const priceRanges = [
         { label: 'Below ₹1000', min: 0, max: 999 },
         { label: '₹1000 - ₹1500', min: 1000, max: 1500 },
-        { label: 'Above ₹15,000', min: 1501, max: Number.POSITIVE_INFINITY }
+        { label: 'Above ₹1500', min: 1501, max: Number.POSITIVE_INFINITY }
     ];
 
     const handleRadioChange = (e) => {
@@ -66,7 +66,7 @@ const ProductList = ({ category }) => {
                                     <div className='ml-6'>
                                         <h3 className="text-lg font-semibold">{product.title}</h3>
                                         <p className="mt-2">{product.color}</p>
-                                        <p className="mt-2">Price: ₹{product.price}</p>
+                                        {/* <p className="mt-2">Price: ₹{product.price}</p> */}
                                     </div>
                                 </div>
                             </div>

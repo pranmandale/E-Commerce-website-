@@ -1,4 +1,6 @@
 
+
+
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../authcontext/AuthContext';
@@ -7,6 +9,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import Fuse from 'fuse.js';
+import { RxCross2 } from "react-icons/rx";
 import Products from '../../data/Products';
 import { CartContext, useCart } from '../cartcontext/CartContext';
 
@@ -41,6 +44,11 @@ const Navbar = ({ onOpenAuthModal }) => {
 
         const results = fuse.search(query).map(result => result.item);
         setSuggestions(results);
+    };
+
+    const clearSearch = () => {
+        setSearchTerm('');
+        setSuggestions([]);
     };
 
     const Menu = [
@@ -86,7 +94,13 @@ const Navbar = ({ onOpenAuthModal }) => {
                                 onChange={handleSearch}
                                 className="w-[200px] sm:w-[400px] transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-primary"
                             />
-                            <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
+                            {/* <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-10" /> */}
+                            {searchTerm && (
+                                <RxCross2 
+                                    className="text-gray-500 cursor-pointer absolute top-1/2 -translate-y-1/2 right-3" 
+                                    onClick={clearSearch} 
+                                />
+                            )}
                             {suggestions.length > 0 && (
                                 <div className="absolute bg-white border border-gray-300 mt-2 rounded-lg w-full z-50">
                                     {suggestions.map((suggestion, index) => (
