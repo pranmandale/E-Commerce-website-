@@ -52,7 +52,7 @@ const Footer = () => {
             src={FooteLogo}
             className='max-w-[50px]'
           />
-          shopsy
+          MY STORE
           </h1>
 
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
