@@ -59,9 +59,8 @@ const Hero = () => {
             <div key={data.id}>
               <div className='grid grid-cols-1 sm:grid-cols-2'>
                 {/* Text content section */}
-                <div className='flex flex-col justify-center gap-4 pl-7 pt-12 sm:pt-0 text-center sm:text-left 
-                order-2 sm:order-1 relative z-10'>
-                  <h1 className='text-5xl sm:text-6xl lg:text-6xl font-bold'>
+                <div className='relative z-10 flex flex-col justify-center order-2 gap-4 pt-12 text-center pl-7 sm:pt-0 sm:text-left sm:order-1'>
+                  <h1 className='text-5xl font-bold sm:text-6xl lg:text-6xl'>
                     {data.title}
                   </h1>
                   <p className='text-sm'>
@@ -69,8 +68,7 @@ const Hero = () => {
                   </p>
                   <div>
                     <button
-                      className='bg-gradient-to-r from-primary to-secondary hover:scale-10 duration-200 
-                      text-white py-2 px-4 rounded-full'
+                      className='px-4 py-2 text-white duration-200 rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-10'
                     >
                       Order Now
                     </button> 

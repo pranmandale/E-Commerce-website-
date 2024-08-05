@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
@@ -51,10 +48,10 @@ const Products = ({ category }) => {
   const filteredProducts_Bestdeals = Product.filter(product => product.id >= 38 && product.id <= 43);
 
   return (
-    <div className='mt-0 pb-5 bg-gray-100 dark:bg-gray-900 dark:text-white'>
+    <div className='pb-5 mt-0 bg-gray-100 dark:bg-gray-900 dark:text-white'>
       <div className='container'>
         <div className='text-center mb-10 max-w-[600px] mx-auto'>
-          <p className='text-3xl font-semibold text-sm text-primary dark:text-secondary'>Top Selling Products for you</p>
+          <p className='text-sm text-3xl font-semibold text-primary dark:text-secondary'>Top Selling Products for you</p>
           <h1 className='text-5xl font-bold dark:text-white'>Products</h1>
         </div>
 
@@ -64,7 +61,7 @@ const Products = ({ category }) => {
             {filteredProducts.map(data => (
               <div
                 key={data.id}
-                className='space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md cursor-pointer'
+                className='p-3 space-y-3 bg-white rounded-md shadow-md cursor-pointer dark:bg-gray-800 dark:text-white'
                 onClick={() => navigate(`/product/${data.id}`)}
               >
                 <img src={data.img} alt={data.title} className='h-[200px] w-[150px] object-cover' />
@@ -83,7 +80,7 @@ const Products = ({ category }) => {
             {filteredProducts_smartphones.map(data => (
               <div
                 key={data.id}
-                className='space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md cursor-pointer'
+                className='p-3 space-y-3 bg-white rounded-md shadow-md cursor-pointer dark:bg-gray-800 dark:text-white'
                 onClick={() => navigate(`/product/${data.id}`)}
               >
                 <img src={data.img} alt={data.title} className='h-[200px] w-[150px] object-cover' />
@@ -102,7 +99,7 @@ const Products = ({ category }) => {
             {filteredProducts_Bestdeals.map(data => (
               <div
                 key={data.id}
-                className='space-y-3 bg-white dark:bg-gray-800 dark:text-white p-3 rounded-md shadow-md cursor-pointer'
+                className='p-3 space-y-3 bg-white rounded-md shadow-md cursor-pointer dark:bg-gray-800 dark:text-white'
                 onClick={() => navigate(`/product/${data.id}`)}
               >
                 <img src={data.img} alt={data.title} className='h-[200px] w-[150px] object-cover' />
