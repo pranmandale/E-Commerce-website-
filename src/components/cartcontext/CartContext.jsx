@@ -1,6 +1,3 @@
-
-
-
 import React, { createContext, useState, useContext } from 'react';
 
 // Create a new context

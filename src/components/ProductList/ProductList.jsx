@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Products from '../../data/Products'; // Adjust the path to your product data
@@ -22,7 +21,7 @@ const ProductList = ({ category }) => {
     };
 
     const filteredProducts = Products.filter(product => {
-        const productPrice = product.price; // Assuming you have a price field
+        const productPrice = product.price; 
         const isCategoryMatch = product.category === category;
         const isPriceMatch = !selectedPriceRange || (productPrice >= selectedPriceRange.min && productPrice <= selectedPriceRange.max);
         return isCategoryMatch && isPriceMatch;

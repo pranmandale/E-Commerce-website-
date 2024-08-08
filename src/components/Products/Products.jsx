@@ -48,7 +48,7 @@ const Products = ({ category }) => {
   const filteredProducts_Bestdeals = Product.filter(product => product.id >= 38 && product.id <= 43);
 
   return (
-    <div className='pb-5 mt-0 bg-gray-100 dark:bg-gray-900 dark:text-white'>
+    <div className='pb-5 mt-0 bg-gray-100 dark:bg-gray-900 dark:text-white '>
       <div className='container'>
         <div className='text-center mb-10 max-w-[600px] mx-auto'>
           <p className='text-sm text-3xl font-semibold text-primary dark:text-secondary'>Top Selling Products for you</p>

@@ -47,9 +47,9 @@ const Hero = () => {
   return (
     <div className='relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gray-100 
     flex justify-center items-center dark:bg-gray-900 
-    dark:text-white duration-200'>
+    dark:text-white duration-200 '>
       {/* Background pattern */}
-      <div className='h-[700px] w-[900px] bg-primary/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z-9'></div>
+      {/* <div className='h-[700px] w-[900px] bg-primary/20 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z-9'></div> */}
       
       {/* Hero section */}
       <div className='container pb-12 sm:pb-4'>
