@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
@@ -33,7 +32,7 @@ const App = () => {
         <AuthProvider>
             <CartProvider>
                 <Router basename="/E-Commerce-website-">
-                    <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
+                    <div className="duration-200 bg-white dark:bg-gray-900 dark:text-white">
                         <Navbar onOpenAuthModal={handleOpenAuthModal} />
                         <Routes>
                             <Route path="/" element={<Home />} />

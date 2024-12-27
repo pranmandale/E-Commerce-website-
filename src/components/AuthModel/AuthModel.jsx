@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Login from "../Login/Login.jsx";
 import Signup from "../Signup/Signup.jsx";
@@ -15,10 +14,10 @@ const AuthModal = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white dark:bg-gray-800 p-8 rounded shadow-md w-full max-w-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="w-full max-w-md p-8 bg-white rounded shadow-md dark:bg-gray-800">
         <button
-          className="absolute top-4 right-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+          className="absolute text-gray-700 top-4 right-4 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
           onClick={onClose}
         >
           &times;
@@ -34,3 +33,5 @@ const AuthModal = ({ onClose }) => {
 };
 
 export default AuthModal;
+
+
